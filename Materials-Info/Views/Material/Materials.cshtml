@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Materials_Info.DbModels.RawMaterial>
+
+@{
+    ViewData["Title"] = "Materials";
+}
+
+<h1>Materials</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+    <div class="row">
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Material List</h4>
+            <p class="card-description">
+          
+            </p>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>MaterialName</th>
+                            <th>Unit</th>
+                            <th>Quantity</th>
+                            <th>CreatedDate</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if(Model != null && Model.Count()>0)
+                        {
+                            int index = 1;
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                         <span class="pull-left-badge">@index</span>
+                                    </td>
+                                    <td>
+                                        @item.MaterialName
+                                    </td>
+                                    <td>
+                                        @item.Unit
+                                    </td>
+                                    <td>
+                                        @item.Quantity
+                                    </td>
+                                    <td>
+                                        @item.CreatedDate
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning mr-2">Edit</button>
+                                            <button type="button" class="btn btn-danger mr-2">Delete</button>
+                                      
+                                    </td>
+                                    </tr>
+                                    index++;
+                                }
+                        }
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+@* <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@

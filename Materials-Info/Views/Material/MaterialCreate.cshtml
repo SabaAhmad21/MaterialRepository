@@ -1,0 +1,48 @@
+﻿@model Materials_Info.ViewModels.RawMaterialVM
+
+@{
+    ViewData["Title"] = "MaterialCreate";
+}
+
+<h1>MaterialCreate</h1>
+<div class="contentpanel">
+    <div class="row">
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create Material</h4>
+            <p class="card-description"> Create material </p>
+            <form class="forms-sample">
+                <div class="form-group">
+                    <label asp-for="MaterialId" >MaterialId</label>
+                    <input type="text" class="form-control" asp-for="MaterialId"  placeholder="MaterialId">
+                </div>
+                <div class="form-group">
+                    <label asp-for="MaterialName">Material Name</label>
+                    <input type="text" class="form-control" asp-for="MaterialName" placeholder="MaterialName">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Unit">Unit</label>
+                    <input type="text" class="form-control" asp-for="Unit" placeholder="Unit">
+                </div>
+                 <div class="form-group">
+                    <label asp-for="Quantity">Quantity</label>
+                    <input type="text" class="form-control" asp-for="Quantity" placeholder="Quantity">
+                </div
+                <div class="form-group">
+                    <label asp-for="CreatedDate">City</label>
+                    <input type="text" class="form-control" asp-for="CreatedDate" placeholder="CreatedDate">
+                </div>
+              
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-dark">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
