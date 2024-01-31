@@ -56,8 +56,8 @@
                                         @item.CreatedDate
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-warning mr-2">Edit</button>
-                                            <button type="button" class="btn btn-danger mr-2">Delete</button>
+                                            <a asp-action="MaterialUpdate" asp-controller="Material" type="button" class="btn btn-warning mr-2" asp-route-id="@item.MaterialId">Edit</a>
+                                            <a asp-action="MaterialDelete" asp-controller="Material" type="button" class="btn btn-danger mr-2" asp-route-id="@item.MaterialId">Delete</a>
                                       
                                     </td>
                                     </tr>

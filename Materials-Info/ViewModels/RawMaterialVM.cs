@@ -16,7 +16,7 @@ namespace Materials_Info.ViewModels
         [Required(ErrorMessage = "Quantity is required!")]
         public decimal Quantity { get; set; }
 
-        [Required(ErrorMessage = "Date Time is required!")]
+       
         public DateTime CreatedDate { get; set; }
     }
 }
