@@ -3,6 +3,8 @@ using Materials_Info.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+using System.Diagnostics;
+
 namespace Materials_Info.Controllers
 {
     public class MaterialController : Controller
@@ -45,8 +47,10 @@ namespace Materials_Info.Controllers
                 await _context.SaveChangesAsync();
             }
             ModelState.AddModelError("", "Material Created");
-            return RedirectToAction("Materials" ,material);
+            return View(material);
         }
+
+        public 
 
 
 

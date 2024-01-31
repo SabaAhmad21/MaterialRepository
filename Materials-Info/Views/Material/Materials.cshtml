@@ -4,16 +4,19 @@
     ViewData["Title"] = "Materials";
 }
 
-<h1>Materials</h1>
+<h2>Materials</h2>
+<div class="row">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-    <div class="row">
-<div class="col-lg-12 grid-margin stretch-card">
+   
+<div class="col-12 grid-margin stretch-card">    
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Material List</h4>
+
+                <p>
+                    <a class="btn btn-primary mr-2" asp-action="MaterialCreate" asp-controller="Material">Add New Material</a>
+
+                </p>
             <p class="card-description">
           
             </p>
@@ -61,7 +64,7 @@
                                     index++;
                                 }
                         }
-                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      
                     </tbody>
                 </table>
             </div>
