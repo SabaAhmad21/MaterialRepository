@@ -4,14 +4,14 @@
     ViewData["Title"] = "MaterialUpdate";
 }
 
-<h2>Create Materials</h2>
+<h2>Update Materials</h2>
 
 <div class="row">
 
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Basic form elements</h4>
+                <h4 class="card-title">Update form elements</h4>
 
                 <form class="forms-sample" asp-action="MaterialUpdate" asp-controller="Material" method="post">
                     <div class="form-group">
@@ -27,7 +27,7 @@
                         <input type="text" class="form-control" asp-for="Quantity" placeholder="Quantity">
                     </div>
 
-                    <button type="submit" class="btn btn-primary mr-2" value="Update" asp-action="MaterialUpdate">Update Material</button>
+                    <button type="submit" class="btn btn-primary mr-2" value="save" asp-action="MaterialUpdate">Update Material</button>
                     <button class="btn btn-dark" asp-action="Materials">Back to List</button>
                     <div>
                         <br />

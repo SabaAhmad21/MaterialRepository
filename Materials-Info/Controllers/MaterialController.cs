@@ -80,19 +80,17 @@ namespace Materials_Info.Controllers
                     var RawMaterial =await _context.RawMaterials.Where(p=>p.MaterialId==model.MaterialId).FirstOrDefaultAsync();
                 if (RawMaterial != null)
                 {
-                    model.MaterialName = RawMaterial.MaterialName; 
-                    model.Unit = RawMaterial.Unit;
-                    model.Quantity = RawMaterial.Quantity;
-
+                    //model.MaterialName = RawMaterial.MaterialName; 
+                    //model.Unit = RawMaterial.Unit;
+                    //model.Quantity = RawMaterial.Quantity;
+                    RawMaterial.MaterialName = model.MaterialName;
+                    RawMaterial.Unit = model.Unit;
+                    RawMaterial.Quantity = model.Quantity;
 
                     _context.Update(RawMaterial);
                     await _context.SaveChangesAsync();
                 }
-                    //RawMaterial.MaterialName = model.MaterialName;
-                    //RawMaterial.Unit = model.Unit;
-                    //RawMaterial.Quantity = model.Quantity;
-                  
-
+  
                 }
 
             ModelState.AddModelError("", "Material Updated!");
