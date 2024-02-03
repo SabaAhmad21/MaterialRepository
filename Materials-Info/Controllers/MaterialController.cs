@@ -103,7 +103,7 @@ namespace Materials_Info.Controllers
             
             if (Material != null)
             {
-               
+              Material.MaterialId = id;
             }
             _context.RawMaterials.Remove(Material);
             await _context.SaveChangesAsync();
