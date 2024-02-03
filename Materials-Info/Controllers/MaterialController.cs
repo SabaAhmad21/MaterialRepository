@@ -67,7 +67,7 @@ namespace Materials_Info.Controllers
                 model.MaterialName = RawMaterial.MaterialName;
                 model.Unit = RawMaterial.Unit;
                 model.Quantity = RawMaterial.Quantity;
-                
+                model.MaterialId = RawMaterial.MaterialId;
             }
             return View(model);
         }
@@ -96,13 +96,7 @@ namespace Materials_Info.Controllers
             ModelState.AddModelError("", "Material Updated!");
             return View(model);
         }
-            
-
-
-
-
-
-
+ 
         public async Task<IActionResult> MaterialDelete(int id)
         {
             var Material = await _context.RawMaterials.Where(p=>p.MaterialId==id).FirstOrDefaultAsync();
